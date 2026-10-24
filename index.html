@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#244B35">
+<meta name="description" content="راهنمای ساده و کاربردی برای نگهداری از گیاهان آپارتمانی">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="سبزینه">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<title>سبزینه | همراه سبز خانهٔ تو</title>
+<style>
+:root{--deep:#244B35;--green:#477052;--sage:#8EAD91;--pale:#DCE8D8;--cream:#F7F5ED;--white:#fff;--ink:#26362b;--muted:#6f7c70;--line:#e2e8df;--shadow:0 8px 24px #244b3510}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,"Arial",sans-serif;line-height:1.8}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8EAD91;outline-offset:2px}
+.app{max-width:760px;margin:auto;min-height:100vh;padding-bottom:88px}.top{background:var(--deep);color:white;padding:22px 18px 26px;border-radius:0 0 26px 26px}.brand{display:flex;align-items:center;gap:10px}.logo{width:46px;height:46px;background:#ffffff18;border:1px solid #ffffff40;border-radius:16px;display:grid;place-items:center;font-size:26px}.brand h1{font-size:23px;margin:0;line-height:1.4}.brand p{margin:0;color:#dce8d8;font-size:12px}.intro{font-size:13px;color:#e4ede2;margin:15px 0 16px}.search{display:flex;gap:8px;background:white;border-radius:14px;padding:7px}.search input{min-width:0;flex:1;border:0;outline:none;padding:7px 9px;background:transparent;color:var(--ink)}.search button{border:0;border-radius:10px;background:var(--pale);color:var(--deep);padding:8px 13px;font-weight:bold}
+main{padding:18px 15px}.section-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:22px 0 12px}.section-head h2{font-size:18px;margin:0;color:var(--deep)}.sub{font-size:12px;color:var(--muted);margin:2px 0 0}.soft-btn{border:1px solid var(--line);background:white;color:var(--deep);border-radius:11px;padding:7px 10px;font-size:12px}
+.hero-card{background:linear-gradient(130deg,#dce8d8,#edf1e6);border:1px solid #d1dfce;border-radius:20px;padding:17px;display:flex;align-items:center;gap:13px}.hero-icon{font-size:42px;flex-shrink:0}.hero-card h2{font-size:17px;color:var(--deep);margin:0 0 4px}.hero-card p{font-size:12px;margin:0 0 10px;color:#536756}.primary{background:var(--deep);color:white;border:0;border-radius:11px;padding:9px 14px;font-weight:bold;font-size:13px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 7px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid #dce4d9;background:#fff;color:#526353;border-radius:999px;padding:7px 13px;font-size:12px}.chip.active{background:var(--deep);border-color:var(--deep);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.plant-card{background:white;border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:var(--shadow);text-align:right;padding:0;color:inherit;width:100%}.plant-art{height:112px;display:grid;place-items:center;background:linear-gradient(135deg,#e4ecdf,#f4f4e9);font-size:55px;position:relative}.plant-art:after{content:"";position:absolute;width:76px;height:15px;background:#b3c5ad55;border-radius:50%;bottom:11px;filter:blur(5px)}.plant-info{padding:10px 11px 12px}.plant-info h3{font-size:14px;margin:0;color:var(--deep)}.latin{font-size:10px;color:var(--muted);direction:ltr;text-align:right;display:block}.plant-info p{font-size:11px;color:#69766a;margin:6px 0 0}.tag{display:inline-block;font-size:10px;background:#edf3ea;color:#426047;padding:3px 7px;border-radius:7px;margin-top:7px}
+.empty{background:#fff;border:1px dashed #cbd9c8;padding:22px;border-radius:15px;text-align:center;color:var(--muted);font-size:13px;grid-column:1/-1}.problem-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.problem{background:white;border:1px solid var(--line);border-radius:13px;padding:11px;text-align:right;color:var(--ink);font-size:12px}.problem span{font-size:21px;display:block}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:5;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:center;padding:9px max(10px,env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom));gap:5px}.bottom-nav button{max-width:240px;flex:1;border:0;background:transparent;color:#718071;font-size:11px;border-radius:12px;padding:5px}.bottom-nav button strong{display:block;font-size:19px;line-height:1.3}.bottom-nav button.active{background:#eaf1e7;color:var(--deep)}
+.view{display:none}.view.active{display:block}.back{border:0;background:transparent;color:var(--green);font-weight:bold;padding:0;margin-bottom:12px}.detail-head{background:#e7eee1;border-radius:18px;padding:18px;display:flex;gap:13px;align-items:center}.detail-head .big{font-size:60px}.detail-head h2{margin:0;color:var(--deep);font-size:21px}.detail-head p{margin:3px 0;font-size:12px;color:var(--muted)}.detail-section{background:#fff;border:1px solid var(--line);border-radius:15px;padding:14px;margin-top:11px}.detail-section h3{font-size:15px;color:var(--deep);margin:0 0 8px}.detail-section p,.detail-section li{font-size:13px;margin-top:4px}.detail-section ul{padding-right:19px;margin:5px 0}.notice{font-size:12px;background:#fff4dc;border-radius:10px;padding:10px;color:#755b20;margin-top:10px}
+.quiz-box{background:white;border:1px solid var(--line);border-radius:17px;padding:16px}.quiz-box h3{margin:0 0 8px;color:var(--deep);font-size:16px}.question{margin:14px 0}.question label{display:block;font-size:13px;font-weight:bold;margin-bottom:7px}.question select{width:100%;padding:11px;border:1px solid #dce4d9;border-radius:11px;background:#fff;color:var(--ink)}.result{margin-top:13px;background:#eaf1e7;border-radius:12px;padding:12px;font-size:13px}
+footer{text-align:center;color:#8a9689;font-size:10px;padding:20px 8px}
+@media(min-width:620px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.plant-art{height:130px}.top{padding:27px 24px 30px}main{padding:20px 22px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+  <div class="brand"><div class="logo" aria-hidden="true">🌿</div><div><h1>سبزینه</h1><p>همراه سبز خانهٔ تو</p></div></div>
+  <p class="intro">راهنمای ساده و کاربردی برای نگهداری از گیاهان آپارتمانی</p>
+  <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="اسم گیاه یا مشکلش رو جست‌وجو کن…" aria-label="جست‌وجوی گیاه"><button type="submit">جست‌وجو</button></form>
+</header>
+<main>
+  <section id="homeView" class="view active">
+    <div class="hero-card"><div class="hero-icon">🪴</div><div><h2>کدوم گیاه به خونه‌ات میاد؟</h2><p>با چند انتخاب ساده، گیاه مناسب شرایطت رو پیدا کن.</p><button class="primary" data-goto="quizView">انتخاب گیاه من</button></div></div>
+    <div class="section-head"><div><h2>گیاهان پیشنهادی</h2><p class="sub">برای شروع، این سبزهای دوست‌داشتنی رو ببین</p></div><button class="soft-btn" data-goto="plantsView">همهٔ گیاهان ←</button></div>
+    <div id="recommendedGrid" class="grid"></div>
+    <div class="section-head"><div><h2>مشکل گیاهت چیه؟</h2><p class="sub">راهنمای اولیه برای نشانه‌های رایج</p></div></div>
+    <div id="homeProblems" class="problem-list"></div>
+  </section>
+  <section id="plantsView" class="view">
+    <div class="section-head"><div><h2>همهٔ گیاهان</h2><p class="sub">۱۰ گیاه آپارتمانی برای آشنایی و نگهداری</p></div></div>
+    <div class="chips" id="categoryChips"></div>
+    <div class="grid" id="allPlantsGrid"></div>
+  </section>
+  <section id="quizView" class="view">
+    <button class="back" data-goto="homeView">→ بازگشت</button>
+    <div class="section-head"><div><h2>گیاه مناسب خانهٔ تو</h2><p class="sub">به سه سؤال جواب بده تا چند گزینه ببینی.</p></div></div>
+    <div class="quiz-box">
+      <div class="question"><label for="light">نور خونه‌ات چطوره؟</label><select id="light"><option value="low">کم‌نور</option><option value="medium" selected>نور متوسط و غیرمستقیم</option><option value="bright">روشن و پرنور</option></select></div>
+      <div class="question"><label for="time">چقدر برای رسیدگی وقت داری؟</label><select id="time"><option value="little">کم؛ گیاه کم‌دردسر می‌خوام</option><option value="some" selected>معمولی</option><option value="often">زیاد؛ رسیدگی دوست دارم</option></select></div>
+      <div class="question"><label for="pets">حیوان خانگی داری؟</label><select id="pets"><option value="no" selected>نه</option><option value="yes">بله، گربه یا سگ دارم</option></select></div>
+      <button class="primary" id="quizSubmit">پیشنهاد گیاه‌ها</button>
+      <div id="quizResult" aria-live="polite"></div>
+    </div>
+  </section>
+  <section id="detailView" class="view"><div id="detailContent"></div></section>
+  <section id="problemView" class="view"><div id="problemContent"></div></section>
+</main>
+<footer>سبزینه · اطلاعات این راهنما عمومی است؛ شرایط هر خانه و هر گیاه می‌تواند متفاوت باشد.</footer>
+</div>
+<nav class="bottom-nav" aria-label="پیمایش اصلی">
+  <button class="active" data-goto="homeView"><strong>⌂</strong>خانه</button>
+  <button data-goto="plantsView"><strong>♧</strong>همهٔ گیاهان</button>
+  <button data-goto="quizView"><strong>✳</strong>انتخاب گیاه</button>
+</nav>
+<script>
+const plants=[
+{id:"pothos",name:"پتوس",latin:"Epipremnum aureum",emoji:"🌿",category:["leafy","hardy","low"],tag:"سازگار و رونده",light:"نور متوسط و غیرمستقیم؛ نور کمتر را هم تا حدی تحمل می‌کند.",water:"وقتی چند سانتی‌متر بالایی خاک خشک شد آبیاری کن؛ آب اضافی باید از زیر گلدان خارج شود.",soil:"خاک سبک و دارای زهکشی مناسب.",temp:"دمای معمول خانه؛ از سرمای ناگهانی دور باشد.",humidity:"رطوبت معمول خانه معمولاً کافی است.",feed:"در فصل رشد، کود کامل رقیق‌شده طبق دستور محصول؛ در زمستان کمتر.",prop:"قلمهٔ ساقه دارای گره را در آب یا بستر سبک ریشه‌دار کن.",problems:"زردی برگ‌ها می‌تواند از آبیاری زیاد یا مشکلات دیگر باشد؛ قبل از آبیاری خاک را بررسی کن.",pets:"برای گربه‌ها و سگ‌ها سمی است و جویدن آن می‌تواند باعث تحریک دهان و ناراحتی گوارشی شود.",easy:3,lowLight:2},
+{id:"monstera",name:"مونسترا",latin:"Monstera deliciosa",emoji:"🌱",category:["leafy"],tag:"برگ‌های بزرگ و چشمگیر",light:"نور روشن و غیرمستقیم؛ آفتاب تند مستقیم ممکن است برگ را بسوزاند.",water:"پس از خشک‌شدن بخشی از خاک آبیاری کن؛ خاک همیشه خیس نماند.",soil:"بستر هواخور و زهکشی‌دار.",temp:"دمای معتدل و دور از جریان هوای سرد.",humidity:"رطوبت متوسط تا نسبتاً بالا را دوست دارد.",feed:"در فصل رشد، کود متعادل و رقیق طبق دستور.",prop:"قلمه‌ای انتخاب کن که گره داشته باشد؛ برگ تنها ریشه و ساقهٔ تازه نمی‌سازد.",problems:"برگ‌های بدون بریدگی در گیاه جوان طبیعی‌اند؛ نور و بلوغ گیاه روی شکل برگ اثر دارد.",pets:"برای گربه‌ها و سگ‌ها سمی است؛ از جویدن آن جلوگیری کن.",easy:2,lowLight:0},
+{id:"snake",name:"سانسوریا",latin:"Dracaena trifasciata",emoji:"🪴",category:["hardy","low"],tag:"کم‌آب‌خواه",light:"از نور کم تا روشنِ غیرمستقیم را تحمل می‌کند؛ رشد در نور بیشتر معمولاً بهتر است.",water:"بین دو آبیاری اجازه بده خاک تقریباً کاملاً خشک شود؛ آبیاری زیاد خطر پوسیدگی دارد.",soil:"خاک بسیار زهکشی‌دار، مناسب ساکولنت‌ها.",temp:"دمای معمول خانه؛ از سرما محافظت شود.",humidity:"رطوبت معمول خانه کافی است.",feed:"در فصل رشد با کود رقیق و کم‌دفعات؛ زیاده‌روی نکن.",prop:"تقسیم بوته معمولاً ساده‌تر است؛ قلمهٔ برگ هم ممکن است، اما ویژگی ارقام ابلق همیشه حفظ نمی‌شود.",problems:"برگ نرم یا پایهٔ پوسیده اغلب با خیس‌ماندن خاک مرتبط است؛ ریشه‌ها را بررسی کن.",pets:"برای گربه‌ها و سگ‌ها سمی است و ممکن است ناراحتی گوارشی ایجاد کند.",easy:3,lowLight:3},
+{id:"zz",name:"زامیفولیا",latin:"Zamioculcas zamiifolia",emoji:"🌿",category:["hardy","low"],tag:"مناسب رسیدگی کم",light:"نور غیرمستقیم از کم تا متوسط؛ از آفتاب تند دور باشد.",water:"اجازه بده خاک بین دو آبیاری کاملاً یا تقریباً خشک شود.",soil:"خاک سبک با زهکشی عالی.",temp:"دمای گرم و پایدار خانه.",humidity:"رطوبت معمول خانه کافی است.",feed:"در فصل رشد، کود رقیق و با فاصله؛ کوددهی زیاد لازم نیست.",prop:"تقسیم ریزوم یا ریشه‌دارکردن قلمه برگ/ساقه؛ تکثیر از برگ کند است.",problems:"زردی ساقه‌ها و خاک خیس می‌تواند نشانهٔ آبیاری بیش از حد باشد.",pets:"برای گربه‌ها و سگ‌ها سمی است؛ دور از دسترس حیوانات نگه دار.",easy:3,lowLight:3},
+{id:"spider",name:"گندمی",latin:"Chlorophytum comosum",emoji:"🌾",category:["leafy","hardy"],tag:"مناسب تکثیر",light:"نور روشن و غیرمستقیم؛ نور ملایم را ترجیح می‌دهد.",water:"وقتی سطح خاک رو به خشکی رفت آبیاری کن؛ از ماندن آب در زیرگلدانی پرهیز کن.",soil:"خاک گلدانی سبک و زهکشی‌دار.",temp:"دمای معمول خانه.",humidity:"رطوبت معمول خانه مناسب است؛ نوک‌سوزی ممکن است دلایل مختلفی داشته باشد.",feed:"در فصل رشد طبق دستور کود کامل رقیق.",prop:"گیاهچه‌های روی ساقه را پس از تشکیل ریشه جدا و در خاک بکار.",problems:"نوک قهوه‌ای برگ‌ها ممکن است با کیفیت آب، خشکی هوا یا آبیاری مرتبط باشد.",pets:"معمولاً برای گربه‌ها و سگ‌ها غیرسمی شناخته می‌شود، اما جویدن زیاد هر گیاهی ممکن است ناراحتی گوارشی ایجاد کند.",easy:3,lowLight:1},
+{id:"peace",name:"اسپاتی‌فیلوم",latin:"Spathiphyllum spp.",emoji:"🤍",category:["flowering","low"],tag:"گل سفید زیبا",light:"نور متوسط و غیرمستقیم؛ نور کم ممکن است گل‌دهی را کم کند.",water:"وقتی سطح خاک کمی خشک شد آبیاری کن؛ پژمردگی می‌تواند از خشکی یا خیس‌ماندن ریشه باشد.",soil:"خاک گلدانی نگهدارندهٔ رطوبت اما دارای زهکشی.",temp:"دمای معتدل و ثابت.",humidity:"رطوبت متوسط تا بالا را دوست دارد.",feed:"در فصل رشد، کود رقیق طبق دستور.",prop:"با تقسیم بوته در زمان تعویض گلدان تکثیر می‌شود.",problems:"قهوه‌ای‌شدن نوک برگ‌ها می‌تواند علت‌های مختلفی داشته باشد؛ نور، آبیاری و کیفیت آب را بررسی کن.",pets:"برای گربه‌ها و سگ‌ها سمی/تحریک‌کننده است؛ با لیلیوم‌های واقعی که برای گربه‌ها بسیار خطرناک‌اند اشتباه نشود.",easy:2,lowLight:2},
+{id:"rubber",name:"فیکوس الاستیکا",latin:"Ficus elastica",emoji:"🍃",category:["leafy"],tag:"برگ‌های براق",light:"نور روشن و غیرمستقیم؛ تغییر ناگهانی جای گیاه را کم کن.",water:"وقتی بخش بالایی خاک خشک شد آبیاری کن.",soil:"خاک گلدانی هواخور و زهکشی‌دار.",temp:"دمای پایدار و دور از باد سرد.",humidity:"رطوبت معمول خانه اغلب مناسب است.",feed:"در فصل رشد کود متعادل و رقیق.",prop:"قلمهٔ ساقه یا روش‌های تکثیر مناسب با رعایت ایمنی شیرهٔ گیاه.",problems:"ریزش برگ ممکن است به تغییر مکان، آبیاری نامناسب یا تنش محیطی مربوط باشد.",pets:"برای گربه‌ها و سگ‌ها سمی است؛ شیرهٔ آن نیز می‌تواند پوست را تحریک کند.",easy:2,lowLight:1},
+{id:"aloe",name:"آلوئه‌ورا",latin:"Aloe vera",emoji:"🌵",category:["succulent","hardy"],tag:"ساکولنت آفتاب‌دوست",light:"نور زیاد و روشن؛ گیاه را به آفتاب مستقیم به‌تدریج عادت بده.",water:"خاک باید بین دو آبیاری کاملاً خشک شود.",soil:"خاک مخصوص کاکتوس و ساکولنت با زهکشی عالی.",temp:"گرما را دوست دارد؛ از یخ‌زدگی دور باشد.",humidity:"رطوبت معمول خانه مناسب است.",feed:"کود مخصوص ساکولنت، کم و در فصل رشد.",prop:"پاجوش‌های دارای ریشه را جدا کن؛ هر برگ جداشده معمولاً به‌سادگی گیاه جدید نمی‌سازد.",problems:"برگ‌های نرم و آبکی می‌توانند نشانهٔ آبیاری زیاد یا سرما باشند.",pets:"برای گربه‌ها و سگ‌ها سمی است؛ بخش‌های خوراکی و فرآورده‌های آن را با گیاه خام یکی ندان.",easy:3,lowLight:0},
+{id:"jade",name:"کراسولا (درخت یشم)",latin:"Crassula ovata",emoji:"🌳",category:["succulent","hardy"],tag:"ساکولنت گوشتی",light:"نور بسیار روشن؛ کمی آفتاب ملایم با عادت‌دهی تدریجی مناسب است.",water:"پس از خشک‌شدن خاک آبیاری کن؛ آب در خاک باقی نماند.",soil:"خاک ساکولنت با زهکشی بالا.",temp:"دمای معمول خانه؛ از سرما و یخ‌زدگی دور باشد.",humidity:"رطوبت معمول خانه کافی است.",feed:"در فصل رشد کود رقیق و کم‌دفعات.",prop:"قلمهٔ ساقه را پس از خشک‌شدن محل برش در خاک مناسب بکار.",problems:"ریزش برگ یا نرم‌شدن ساقه می‌تواند از آبیاری زیاد، کمبود نور یا تنش محیطی باشد.",pets:"برای گربه‌ها و سگ‌ها سمی شناخته می‌شود؛ دور از دسترس حیوانات قرار بده.",easy:3,lowLight:0},
+{id:"orchid",name:"ارکیدهٔ فالانوپسی",latin:"Phalaenopsis spp.",emoji:"🌸",category:["flowering"],tag:"گل‌دهی چشم‌نواز",light:"نور روشن و غیرمستقیم؛ آفتاب تند مستقیم مناسب نیست.",water:"وقتی بستر رو به خشکی رفت آبیاری کن؛ آب در تاج گیاه جمع نشود.",soil:"بستر مخصوص ارکیده، معمولاً بر پایهٔ پوست درخت؛ خاک معمولی گلدان مناسب نیست.",temp:"دمای معتدل و دور از نوسان شدید.",humidity:"رطوبت متوسط با گردش هوای ملایم.",feed:"کود مخصوص ارکیده با غلظت کم و طبق دستور.",prop:"تکثیر خانگی آن معمولاً ساده نیست؛ گیاهچهٔ روی ساقه فقط در صورت تشکیل و رشد کافی قابل جداکردن است.",problems:"ریشهٔ نقره‌ای در بستر شفاف اغلب نشان می‌دهد گیاه به آبیاری نزدیک شده؛ ریشهٔ قهوه‌ای و نرم ممکن است پوسیده باشد.",pets:"فالانوپسی معمولاً برای گربه‌ها و سگ‌ها غیرسمی فهرست می‌شود؛ از خوردن بستر و گیاه جلوگیری کن.",easy:1,lowLight:1}
+];
+const categories=[["all","همه"],["leafy","برگ‌دار"],["hardy","کم‌دردسر"],["succulent","ساکولنت"],["flowering","گل‌دار"],["low","کم‌نور"]];
+const problems=[
+{title:"زرد شدن برگ‌ها",emoji:"🍂",text:"زردی یک برگ قدیمی می‌تواند طبیعی باشد؛ زردی چند برگ همراه خاک خیس ممکن است به آبیاری زیاد یا مشکل ریشه مربوط باشد. رطوبت خاک، زهکشی و نور را با هم بررسی کن."},
+{title:"قهوه‌ای شدن نوک برگ",emoji:"🤎",text:"خشکی هوا، آبیاری نامنظم، تجمع املاح یا کود زیاد می‌توانند دخیل باشند. یک عامل را در هر نوبت اصلاح کن و روند برگ‌های جدید را ببین."},
+{title:"پژمردگی",emoji:"🥀",text:"قبل از آب‌دادن، خاک را لمس کن. خاک خشک می‌تواند نشانهٔ کم‌آبی باشد؛ خاک خیس و بوی نامطبوع احتمال آسیب ریشه را مطرح می‌کند."},
+{title:"ساقه یا ریشهٔ نرم",emoji:"🪴",text:"خاک خیسِ طولانی و زهکشی ضعیف از علت‌های رایج پوسیدگی‌اند. آب اضافی را تخلیه کن و ریشه‌ها را بررسی کن؛ بخش‌های پوسیده ممکن است نیاز به حذف داشته باشند."},
+{title:"لکه روی برگ",emoji:"🔎",text:"لکه می‌تواند از آفتاب‌سوختگی، آسیب فیزیکی، آبیاری روی برگ یا بیماری باشد. گیاه را موقتاً از بقیه جدا کن و الگوی گسترش لکه را بررسی کن."},
+{title:"تارهای ریز یا آفت",emoji:"🕸️",text:"پشت برگ‌ها و محل اتصال برگ به ساقه را بررسی کن. گیاه را جدا کن؛ آفت را شناسایی و ابتدا با شست‌وشوی ملایم و روش مناسب همان آفت اقدام کن."},
+{title:"ریزش برگ",emoji:"🍃",text:"تغییر مکان، تغییر دما، آبیاری نامناسب و نور ناکافی می‌توانند باعث ریزش شوند. شرایط اخیر را مرور کن و از تغییرات متعدد هم‌زمان پرهیز کن."},
+{title:"رشد کم یا بی‌گل ماندن",emoji:"🌱",text:"فصل، نور، اندازهٔ گلدان، تغذیه و بلوغ گیاه اثر دارند. کود بیشتر همیشه راه‌حل نیست؛ اول نور و سلامت ریشه را بررسی کن."}
+];
+const categoryName={leafy:"برگ‌دار",hardy:"کم‌دردسر",succulent:"ساکولنت",flowering:"گل‌دار",low:"مناسب نور کم"};
+let currentCategory="all";
+const $=id=>document.getElementById(id);
+function plantCard(p){return `<button class="plant-card" data-plant="${p.id}" aria-label="مشاهدهٔ ${p.name}"><div class="plant-art">${p.emoji}</div><div class="plant-info"><h3>${p.name}</h3><span class="latin">${p.latin}</span><p>${p.tag}</p><span class="tag">${p.category.map(c=>categoryName[c]).filter(Boolean)[0]||"گیاه آپارتمانی"}</span></div></button>`}
+function renderGrid(target,list){$(target).innerHTML=list.length?list.map(plantCard).join(""):`<div class="empty">گیاهی با این مشخصات پیدا نشد. دستهٔ دیگری را امتحان کن.</div>`}
+function renderCategories(){$("categoryChips").innerHTML=categories.map(([id,label])=>`<button class="chip ${id===currentCategory?"active":""}" data-category="${id}">${label}</button>`).join("");}
+function showView(id){document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===id));document.querySelectorAll(".bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.goto===id));window.scrollTo({top:0,behavior:"smooth"});}
+function showPlant(id){const p=plants.find(x=>x.id===id);if(!p)return;$("detailContent").innerHTML=`<button class="back" data-goto="plantsView">→ بازگشت به گیاهان</button><div class="detail-head"><div class="big">${p.emoji}</div><div><h2>${p.name}</h2><p>${p.latin}</p><span class="tag">${p.tag}</span></div></div><div class="detail-section"><h3>معرفی کوتاه</h3><p>${p.name} یکی از گیاهان آپارتمانی قابل نگهداری است؛ نتیجه به نور، آبیاری و شرایط خانه بستگی دارد.</p></div><div class="detail-section"><h3>☀️ نور</h3><p>${p.light}</p><h3>💧 آبیاری</h3><p>${p.water}</p><h3>🪴 خاک و گلدان</h3><p>${p.soil} گلدانی با سوراخ زهکشی انتخاب کن.</p><h3>🌡️ دما و رطوبت</h3><p>${p.temp} ${p.humidity}</p><h3>🌿 کوددهی</h3><p>${p.feed}</p></div><div class="detail-section"><h3>✂️ تکثیر</h3><p>${p.prop}</p><h3>🧩 مشکلات رایج</h3><p>${p.problems}</p></div><div class="detail-section"><h3>🐾 ایمنی حیوانات خانگی</h3><p>${p.pets}</p><div class="notice">اگر حیوان خانگی بخشی از گیاه را خورده یا نشانه‌ای دارد، برای راهنمایی دقیق با دامپزشک تماس بگیر.</div></div><div class="detail-section"><h3>نکتهٔ نگهداری</h3><p>قبل از هر آبیاری، رطوبت خاک را بررسی کن. برنامهٔ ثابت هفتگی برای همهٔ گیاهان مناسب نیست؛ فصل، نور و اندازهٔ گلدان را هم در نظر بگیر.</p></div>`;showView("detailView");}
+function showProblem(index){const p=problems[index];$("problemContent").innerHTML=`<button class="back" data-goto="homeView">→ بازگشت به خانه</button><div class="detail-head"><div class="big">${p.emoji}</div><div><h2>${p.title}</h2><p>راهنمای بررسی اولیه</p></div></div><div class="detail-section"><h3>از کجا شروع کنم؟</h3><p>${p.text}</p></div><div class="detail-section"><h3>یادت باشه</h3><p>یک نشانه به‌تنهایی تشخیص قطعی نیست. وضعیت خاک، نور، ریشه و تغییرات اخیر را کنار هم بررسی کن. اگر مشکل سریع گسترش پیدا کرد، از متخصص گیاه کمک بگیر.</p></div>`;showView("problemView");}
+function search(q){q=q.trim().toLocaleLowerCase("fa");if(!q){showView("plantsView");return}const found=plants.filter(p=>(p.name+" "+p.latin+" "+p.tag+" "+p.problems).toLocaleLowerCase("fa").includes(q));const prob=problems.filter(p=>p.title.toLocaleLowerCase("fa").includes(q));if(found.length){currentCategory="all";renderCategories();renderGrid("allPlantsGrid",found);showView("plantsView")}else if(prob.length){showProblem(problems.indexOf(prob[0]))}else{$("allPlantsGrid").innerHTML='<div class="empty">نتیجه‌ای پیدا نشد. نام گیاه یا عبارت کوتاه‌تری را امتحان کن.</div>';showView("plantsView")}}
+function quiz(){const light=$("light").value,time=$("time").value,pets=$("pets").value;let list=plants.filter(p=>{if(light==="low"&&p.lowLight<2)return false;if(time==="little"&&p.easy<2)return false;if(pets==="yes"&&["pothos","monstera","snake","zz","peace","rubber","aloe","jade"].includes(p.id))return false;return true});if(!list.length)list=plants.filter(p=>pets==="yes"?["spider","orchid"].includes(p.id):true);list.sort((a,b)=>{let score=p=>((light==="low"?p.lowLight:light==="bright"?(p.category.includes("succulent")?2:1):1)+(time==="little"?p.easy:1));return score(b)-score(a)});$("quizResult").innerHTML=`<div class="result"><strong>پیشنهاد برای تو:</strong><div class="grid" style="margin-top:10px">${list.slice(0,3).map(plantCard).join("")}</div><p style="font-size:11px">این پیشنهاد تقریبی است. اگر حیوان خانگی داری، پیش از خرید، ایمنی گیاه را از منبع معتبر و با توجه به گونهٔ حیوان بررسی کن.</p></div>`}
+document.addEventListener("click",e=>{const nav=e.target.closest("[data-goto]");if(nav)showView(nav.dataset.goto);const pc=e.target.closest("[data-plant]");if(pc)showPlant(pc.dataset.plant);const cc=e.target.closest("[data-category]");if(cc){currentCategory=cc.dataset.category;renderCategories();renderGrid("allPlantsGrid",currentCategory==="all"?plants:plants.filter(p=>p.category.includes(currentCategory)));}});
+$("searchForm").addEventListener("submit",e=>{e.preventDefault();search($("searchInput").value)});
+$("quizSubmit").addEventListener("click",quiz);
+renderGrid("recommendedGrid",[plants[0],plants[2],plants[3],plants[4]]);
+renderGrid("allPlantsGrid",plants);renderCategories();
+$("homeProblems").innerHTML=problems.slice(0,6).map((p,i)=>`<button class="problem" data-problem="${i}"><span>${p.emoji}</span>${p.title}</button>`).join("");
+document.addEventListener("click",e=>{const p=e.target.closest("[data-problem]");if(p)showProblem(Number(p.dataset.problem));});
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(err => {
+      console.error("ثبت حالت آفلاین ناموفق بود:", err);
+    });
+  });
+}
+</script>
+</body>
+</html>
